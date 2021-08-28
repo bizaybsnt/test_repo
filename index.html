@@ -1,2 +1,441 @@
 sdsdha s'ds
-sdsdha dsd
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <title>LC LAB</title>
+    <meta name="description" content="{% DESCRIPTION %}">
+    <meta name="keywords" content="{% KEYWORDS %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- {% SITE_FAVICON %} -->
+    <link rel="canonical" href="{% PAGE_FULL_URL %}">
+
+    <link rel="stylesheet" href="user/theme/THEME-NAME/media/css/import.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css"> -->
+    <!-- {% BLOCK NAME='ga' %} -->
+</head>
+
+<body class="top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+    <script src="user/theme/THEME-NAME/media/js/common.js"></script>
+    <script src="user/theme/THEME-NAME/media/js/module/modal.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- Container -->
+  <div class="l-container">
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="h-wrapper">
+          <div class="logo">
+            <a src="user/theme/THEME-NAME/media/img/logo.png" alt="logo"
+              srcset="user/theme/THEME-NAME/media/img/logo.png 1x, user/theme/THEME-NAME/media/img/logo@2x.png 2x" />
+          </div>
+          <ul class="menu-list">
+            <li class="item">
+              <a href="./index.html" class="menu-txt list active">顧客一覧</a>
+            </li>
+            <li class="item">
+              <a href="./record.html" class="menu-txt clipboard">カルテ一覧</a>
+            </li>
+            <li class="item">
+              <a href="./aggregate-data.html" class="menu-txt database">集計データ</a>
+            </li>
+            <li class="item">
+              <a href="./register.html" class="menu-txt plus">新規登録</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Main -->
+    <div class="l-main">
+      <div class="container">
+
+        <div class="title">
+          <h1>顧客一覧</h1>
+          <button class="btn btn-export">Excelに書き出す</button>
+        </div>
+
+        <div class="filter">
+          <div class="form-group">
+            <label>顧客番号</label>
+            <input type="text" class="w-130">
+          </div>
+
+          <div class="form-group">
+            <label>名前・ふりがな</label>
+            <input type="text" class="w-230">
+          </div>
+
+          <div class="form-group">
+            <label>電話・携帯</label>
+            <input type="text" class="w-130">
+          </div>
+
+          <div class="form-group">
+            <label>担当者</label>
+            <div class="custom-select">
+              <select class="w-130">
+                  <option selected>兵庫県</option>
+              </select>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label>表示行数</label>
+            <div class="custom-select">
+              <select class="w-65">
+                  <option selected>100</option>
+              </select>
+          </div>
+            <label>件</label>
+          </div>
+        </div>
+
+        <div class="table-pagination">
+          <p class="pagination-text">
+            <span class="bold focus">1,570</span>件中 <span class="bold">1-100</span>件を表示中
+          </p>
+          <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#" class="extention">...</a>
+            <a href="#">16</a>
+          </div>
+        </div>
+        sdsdha dsd
+
+        <div class="table overflow-table">
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th class="min-w-110 sort sticky-head1">顧客番号</th>
+                <th class="min-w-90 sticky-head2">名前 </th>
+                <th class="min-w-210">住所</th>
+                <th class="min-w-150">携帯・電話 </th>
+                <th class="min-w-70">合計売上 </th>
+                <th class="min-w-80 sort">来店回数 </th>
+                <th class="min-w-110 sort">新規来店日 </th>
+                <th class="min-w-110 sort">最終来店日 </th>
+                <th class="min-w-130 sort">最終DM送信日</th>
+                <th class="min-w-90">担当者 </th>
+                <th class="min-w-210">編集 </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bold sticky-col1">00001</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 07212345678</td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                  <a href="./edit.html"> <a href="./edit.html"><button class="btn btn-edit">編集</button></a></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00002</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00003</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00004</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00005</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00006</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00007</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00008</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00009</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00010</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00011</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold sticky-col1">00002</td>
+                <td class="bold sticky-col2">山田太郎 様 </td>
+                <td class="text-left">兵庫県川西市向陽台1丁目12-5 グリーンハイツ向陽1-17</td>
+                <td>09067328765 </td>
+                <td>5000　円</td>
+                <td>10回</td>
+                <td>21.01.01</td>
+                <td>21.05.01</td>
+                <td>21.07.01</td>
+                <td>長谷川 一郎</td>
+                <td class="action">
+                   <a href="./edit.html"><button class="btn btn-edit">編集</button></a>
+                  <button class="btn btn-dm modal-open">DM送付</button>
+                  <button class="btn btn-shop modal-open">来店</button>
+                  <button class="btn btn-delete modal-open">削除</button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+        <div class="table-pagination content-end">
+          <p class="pagination-text">
+            <span class="bold">1,570</span>件中 <span class="bold">1-100</span>件を表示中
+          </p>
+          <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#" class="extention">...</a>
+            <a href="#">16</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- /Main -->
+
+
+
+  <!-- Footer -->
+  <footer>
+  </footer>
+  <!-- /Footer -->
+
+  </div>
+  <!-- /Container -->
+
+  <div class="tooltip-modal modal-dm">
+    <div class="tooltip__arrow"></div>
+
+    <div class="modal-content">
+      <p class="modal-text">このお客様へサンキューレターを
+        2021年6月24日送付済にします。
+        よろしいですか？</p>
+      <button class="btn bg-secondary modal-btn">送付済みにする</button>
+    </div>
+  </div>
+
+  <div class="tooltip-modal modal-delete">
+    <div class="tooltip__arrow"></div>
+
+    <div class="modal-content">
+      <p class="modal-text text-center">
+        山田太郎さんの情報を <br />
+        削除してもよろしいですか？
+      </p>
+      <button class="btn bg-red modal-btn">削除する</button>
+    </div>
+  </div>
+
+  <div class="tooltip-modal modal-shop">
+    <div class="modal-content">
+      <div class="modal-form">
+        <label class="form-label">
+          来店日
+        </label>
+        <br />
+
+        <input type="text" class="modal-form w-85">
+      </div>
+
+      <div class="modal-form">
+        <label class="form-label">
+          料金
+        </label>
+        <br />
+        <input type="number" class="modal-form w-120">円
+      </div>
+      <button class="btn bg-light-green modal-btn">確定する</button>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
